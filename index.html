@@ -14,8 +14,76 @@ input,select,button{font:inherit;border-radius:9px;padding:11px;border:1px solid
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:14px}.card{padding:0;overflow:hidden;margin:0}.photo{height:165px;background:linear-gradient(145deg,#f0f5fa,#fff);display:flex;align-items:center;justify-content:center;color:#8193a6;font-size:56px;overflow:hidden}.photo img{width:100%;height:100%;object-fit:contain}.body{padding:14px}.brand{font-size:12px;color:var(--blue);font-weight:800;letter-spacing:.08em;text-transform:uppercase}.size{font-size:22px;font-weight:800;margin:5px 0}.price{font-size:25px;color:var(--navy);font-weight:800}.sub{font-size:12px;color:var(--muted)}.msi{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:6px}.pill{background:var(--pale);border-radius:8px;padding:8px;font-size:12px}.pill b{display:block;margin-top:4px}.quote{display:block;text-align:center;text-decoration:none;margin-top:12px;background:#0b8f59;color:white;padding:11px;border-radius:9px;font-weight:700}
 .empty{padding:40px;text-align:center;color:var(--muted);background:white;border-radius:14px}.foot{font-size:12px;color:var(--muted);padding:18px 3px}
 @media(max-width:620px){.brand-head{align-items:flex-start;gap:12px}.brand-logo{width:112px;max-height:76px}.brand-copy h1{font-size:30px}.service-panel{grid-template-columns:1fr}.service-visual{min-height:105px}.generic-tire svg{width:68px;height:68px}.row{grid-template-columns:1fr}.filters{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.body{padding:10px}.photo{height:110px}.size{font-size:17px}.price{font-size:19px}.msi{grid-template-columns:1fr}.pill{padding:6px}.card{border-radius:11px}}
+
+.hero-showcase{max-width:1200px;margin:16px auto;padding:0 14px}
+.hero-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:14px}
+.hero-copy{background:linear-gradient(125deg,#071d3b,#145b9d);color:#fff;border-radius:18px;padding:25px;display:flex;flex-direction:column;justify-content:center;min-height:230px}
+.hero-copy .eyebrow{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#bcdcff}
+.hero-copy h2{font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(30px,4vw,46px);line-height:1.02;margin:10px 0}
+.hero-copy p{color:#e1efff;line-height:1.55;margin:0 0 16px}
+.hero-actions{display:flex;gap:9px;flex-wrap:wrap}
+.hero-actions a{display:inline-block;border-radius:10px;padding:11px 15px;text-decoration:none;font-weight:800;background:#0d965f;color:#fff}
+.hero-actions a.secondary{background:#fff;color:#123d68}
+.hero-art{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:linear-gradient(150deg,#edf4fb,#fff);padding:18px;display:flex;flex-direction:column;justify-content:center;align-items:center;min-height:230px}
+.tire-illustration{width:160px;height:160px;filter:drop-shadow(0 12px 10px #142b4420)}
+.hero-art strong{font-family:"Barlow Condensed",Impact,sans-serif;color:#123d68;font-size:23px;letter-spacing:.05em}
+.hero-art span{font-size:12px;color:#5c7185;text-align:center}
+.section-heading{max-width:1200px;margin:24px auto 12px;padding:0 14px}
+.section-heading h2{font-family:"Barlow Condensed",Impact,sans-serif;font-size:30px;color:#123d68;margin:0}
+.section-heading p{margin:4px 0 0;color:#61758a}
+.services-grid{max-width:1200px;margin:0 auto 18px;padding:0 14px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.service-card{border:1px solid var(--line);background:#fff;border-radius:14px;padding:17px;min-height:150px}
+.service-icon{width:42px;height:42px;border-radius:12px;background:#e8f2fc;color:#145b9d;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:10px}
+.service-card h3{font-family:"Barlow Condensed",Impact,sans-serif;font-size:22px;color:#123d68;margin:0 0 5px}
+.service-card p{font-size:13px;color:#61758a;line-height:1.5;margin:0}
+.video-section{max-width:1200px;margin:0 auto 18px;padding:0 14px}
+.video-shell{background:#071d3b;border-radius:16px;padding:18px;color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center}
+.video-shell h2{font-family:"Barlow Condensed",Impact,sans-serif;font-size:30px;margin:0 0 7px}
+.video-shell p{color:#d6e6f7;line-height:1.5;margin:0}
+.video-placeholder{border:1px dashed #8db8e4;border-radius:12px;min-height:150px;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:#d6e6f7}
+.video-placeholder .play{font-size:38px;display:block;color:#fff}
+.location-section{max-width:1200px;margin:0 auto 22px;padding:0 14px}
+.location-card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:18px;display:flex;gap:15px;align-items:center;justify-content:space-between}
+.location-card h2{font-family:"Barlow Condensed",Impact,sans-serif;color:#123d68;font-size:27px;margin:0 0 5px}
+.location-card p{color:#61758a;margin:0;line-height:1.5}
+.location-card a{display:inline-block;background:#145b9d;color:#fff;text-decoration:none;border-radius:10px;padding:12px 16px;font-weight:800;white-space:nowrap}
+@media(max-width:700px){.hero-grid,.video-shell{grid-template-columns:1fr}.hero-copy{min-height:210px;padding:20px}.hero-art{min-height:190px}.tire-illustration{width:125px;height:125px}.services-grid{grid-template-columns:1fr}.location-card{align-items:flex-start;flex-direction:column}.location-card a{white-space:normal}.section-heading h2{font-size:27px}}
+
 </style></head><body>
 <header><div class="wrap brand-head"><img class="brand-logo" src="logo-deriel.jpg" alt="Logo Deriel"><div class="brand-copy"><h1>LLANTERA DERIEL</h1><p>Encuentra tu medida. Cotiza tu próxima llanta.</p></div></div></header>
+
+<section class="hero-showcase">
+ <div class="hero-grid">
+  <div class="hero-copy">
+   <span class="eyebrow">Llantera · Alineación 3D · Servicio automotriz</span>
+   <h2>Tu camino empieza con buenas llantas.</h2>
+   <p>Encuentra tu medida, compara opciones y cotiza directamente con el equipo de Llantera Deriel.</p>
+   <div class="hero-actions">
+    <a href="https://wa.me/529511037358?text=Hola%2C%20Llantera%20Deriel%2C%20quiero%20cotizar%20llantas." target="_blank" rel="noopener">Cotizar por WhatsApp</a>
+    <a class="secondary" href="https://www.google.com/maps/search/?api=1&query=Llantera+Deriel+Oaxaca" target="_blank" rel="noopener">Cómo llegar</a>
+   </div>
+  </div>
+  <div class="hero-art">
+   <svg class="tire-illustration" viewBox="0 0 180 180" role="img" aria-label="Ilustración genérica de neumático"><defs><linearGradient id="tireGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#59636f"/><stop offset=".35" stop-color="#111821"/><stop offset=".7" stop-color="#343e49"/><stop offset="1" stop-color="#0c1118"/></linearGradient><linearGradient id="rimGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#9aa8b8"/></linearGradient></defs><circle cx="90" cy="90" r="77" fill="url(#tireGrad)" stroke="#0a1220" stroke-width="5"/><circle cx="90" cy="90" r="65" fill="none" stroke="#727d89" stroke-width="3" stroke-dasharray="5 6"/><circle cx="90" cy="90" r="48" fill="url(#rimGrad)" stroke="#718195" stroke-width="4"/><circle cx="90" cy="90" r="31" fill="#dce5ee" stroke="#718195" stroke-width="3"/><circle cx="90" cy="90" r="12" fill="#123d68"/><g fill="#6f8092"><circle cx="90" cy="68" r="4"/><circle cx="109" cy="84" r="4"/><circle cx="102" cy="107" r="4"/><circle cx="78" cy="107" r="4"/><circle cx="71" cy="84" r="4"/></g></svg>
+   <strong>DERIEL</strong><span>Imagen ilustrativa de neumático. El modelo exacto puede variar.</span>
+  </div>
+ </div>
+</section>
+<div class="section-heading"><h2>Servicios para seguir tu camino</h2><p>Atención para autos y camionetas, con equipo especializado.</p></div>
+<section class="services-grid">
+ <article class="service-card"><div class="service-icon">◉</div><h3>Montaje y balanceo</h3><p>Instalación de neumáticos y balanceo para una rodadura más uniforme.</p></article>
+ <article class="service-card"><div class="service-icon">◎</div><h3>Alineación 3D</h3><p>Revisión y ajuste de geometría de dirección y suspensión según especificación del vehículo.</p></article>
+ <article class="service-card"><div class="service-icon">⚙</div><h3>Reparación de llantas</h3><p>Evaluación de daños y reparación según la zona y condición del neumático.</p></article>
+</section>
+<div class="section-heading"><h2>Así trabajamos</h2><p>Próximamente, videos de reparaciones y servicios realizados en Deriel.</p></div>
+<section class="video-section">
+ <div class="video-shell">
+  <div><h2>Trabajo técnico, resultados visibles.</h2><p>Esta sección está lista para incorporar videos de montaje, balanceo, alineación 3D y reparaciones. Cuando tengas un enlace de YouTube, podremos colocarlo aquí sin hacer pesada la página.</p></div>
+  <div class="video-placeholder"><div><span class="play">▶</span><strong>Galería de videos Deriel</strong><br><small>Espacio preparado para tus videos reales</small></div></div>
+ </div>
+</section>
+<section class="location-section"><div class="location-card"><div><h2>Visítanos en Llantera Deriel</h2><p>Abre Google Maps para consultar la ubicación y las indicaciones disponibles.</p></div><a href="https://www.google.com/maps/search/?api=1&query=Llantera+Deriel+Oaxaca" target="_blank" rel="noopener">Abrir Google Maps ↗</a></div></section>
+
 <section class="service-strip"><div class="service-panel"><div><h2>Servicio profesional para tus llantas</h2><p>Montaje, balanceo, alineación 3D y reparación de neumáticos. Consulta disponibilidad y cotiza directamente con Deriel.</p><a class="video-link" id="videoToggle" href="#servicios">Ver sección de servicios ↓</a><div class="service-video" id="serviceVideo"><p><b>Galería de reparaciones</b><br>Próximamente podrás ver aquí videos reales de los trabajos de Deriel. Cuando tengas tus videos en YouTube, los incorporamos a esta sección.</p></div></div><div class="service-visual"><strong>DERIEL · SERVICIOS</strong><span>LLANTAS · ALINEACIÓN 3D · MANTENIMIENTO AUTOMOTRIZ</span><span>PRECISIÓN EN CADA RUEDA</span></div></div></section>
 <main>
 <section class="setup" id="setup" style="display:none"><h2>Conecta tu Google Sheets</h2>

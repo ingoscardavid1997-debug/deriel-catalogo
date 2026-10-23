@@ -18,10 +18,10 @@ input,select,button{font:inherit;border-radius:9px;padding:11px;border:1px solid
 <header><div class="wrap brand-head"><img class="brand-logo" src="logo-deriel.jpg" alt="Logo Deriel"><div class="brand-copy"><h1>LLANTERA DERIEL</h1><p>Encuentra tu medida. Cotiza tu próxima llanta.</p></div></div></header>
 <section class="service-strip"><div class="service-panel"><div><h2>Servicio profesional para tus llantas</h2><p>Montaje, balanceo, alineación 3D y reparación de neumáticos. Consulta disponibilidad y cotiza directamente con Deriel.</p><a class="video-link" id="videoToggle" href="#servicios">Ver sección de servicios ↓</a><div class="service-video" id="serviceVideo"><p><b>Galería de reparaciones</b><br>Próximamente podrás ver aquí videos reales de los trabajos de Deriel. Cuando tengas tus videos en YouTube, los incorporamos a esta sección.</p></div></div><div class="service-visual"><strong>DERIEL · SERVICIOS</strong><span>LLANTAS · ALINEACIÓN 3D · MANTENIMIENTO AUTOMOTRIZ</span><span>PRECISIÓN EN CADA RUEDA</span></div></div></section>
 <main>
-<section class="setup" id="setup"><h2>Conecta tu Google Sheets</h2>
+<section class="setup" id="setup" style="display:none"><h2>Conecta tu Google Sheets</h2>
 <p>Para sincronizar precios y productos, publica <b>solo la hoja Catalogo</b> como CSV desde Google Sheets y pega aquí el enlace publicado. No uses una hoja que contenga costos o información privada.</p>
 <div class="row"><input id="csvUrl" placeholder="Pega aquí la URL CSV publicada de Google Sheets"><button id="connect">Conectar catálogo</button><button id="forget" type="button">Desconectar</button></div>
-<p id="setupMsg" class="status">Sin conexión: se muestra el catálogo de ejemplo. Cuando conectes tu hoja, se actualizará desde Google Sheets.</p></section>
+<p id="setupMsg" class="status">Cargando precios desde Google Sheets…</p></section>
 <section class="filters"><input id="q" placeholder="Buscar medida o marca, ej. 225/70R15C"><select id="brand"><option value="">Todas las marcas</option></select></section>
 <div class="status" id="count"></div><section class="grid" id="grid"></section>
 <div class="foot">Los precios a meses son estimaciones y deben confirmarse con la tasa vigente del proveedor de pagos. La disponibilidad puede cambiar. Para cotizar, contacta a Llantera Deriel.<br><a class="quote" style="max-width:360px" href="https://wa.me/529511037358?text=Hola%2C%20Llantera%20Deriel%2C%20quiero%20una%20cotizaci%C3%B3n." target="_blank" rel="noopener">Contactar a Deriel por WhatsApp</a></div>
@@ -34,15 +34,16 @@ const $=id=>document.getElementById(id);
 const money=n=>new Intl.NumberFormat('es-MX',{style:'currency',currency:'MXN',maximumFractionDigits:2}).format(Number(n)||0);
 function clean(s){return String(s??'').trim()}
 function normalize(r){
+ const num=v=>{let x=String(v??'').trim().replace(/[^0-9,.-]/g,''); if(x.includes(',')&&x.includes('.')) x=x.replace(/\./g,'').replace(',','.'); else if(x.includes(',')) x=x.replace(',','.'); return Number(x)||0};
  const get=(...keys)=>{for(const k of keys){if(r[k]!==undefined&&r[k]!==null&&String(r[k]).trim()!=='')return r[k]}return ''};
  const show=clean(get('Mostrar','mostrar','Visible')).toUpperCase();
  if(show==='NO'||show==='FALSE'||show==='0')return null;
  return {size:clean(get('Medida','MEDIDA','medida','Tamaño')),brand:clean(get('Marca/Modelo','Marca','MARCA','Modelo','MODELO')),
- cash:Number(String(get('Precio contado (MXN)','Precio contado','Precio venta','PRECIO VENTA')).replace(/[$,\s]/g,''))||0,
- p3:Number(String(get('Precio 3 MSI (MXN)','Precio 3 MSI')).replace(/[$,\s]/g,''))||0,
- p6:Number(String(get('Precio 6 MSI (MXN)','Precio 6 MSI','PRECIO 6MSI')).replace(/[$,\s]/g,''))||0,
- p9:Number(String(get('Precio 9 MSI (MXN)','Precio 9 MSI')).replace(/[$,\s]/g,''))||0,
- p12:Number(String(get('Precio 12 MSI (MXN)','Precio 12 MSI')).replace(/[$,\s]/g,''))||0,
+ cash:num(get('Precio contado (MXN)','Precio contado','Precio venta','PRECIO VENTA')),
+ p3:num(get('Precio 3 MSI (MXN)','Precio 3 MSI')),
+ p6:num(get('Precio 6 MSI (MXN)','Precio 6 MSI','PRECIO 6MSI')),
+ p9:num(get('Precio 9 MSI (MXN)','Precio 9 MSI')),
+ p12:num(get('Precio 12 MSI (MXN)','Precio 12 MSI')),
  image:clean(get('Foto URL','Foto URL pública','Imagen','Foto')),notes:clean(get('Notas','Descripción'))};
 }
 function parseCSV(text){let rows=[],row=[],field='',quoted=false;for(let i=0;i<text.length;i++){let c=text[i],n=text[i+1];if(c==='"'&&quoted&&n==='"'){field+='"';i++}else if(c==='"'){quoted=!quoted}else if(c===','&&!quoted){row.push(field);field=''}else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&n==='\n')i++;row.push(field);if(row.some(x=>x.trim()!==''))rows.push(row);row=[];field=''}else field+=c}row.push(field);if(row.some(x=>x.trim()!==''))rows.push(row);if(rows.length<2)return[];let headers=rows.shift().map(x=>x.trim().replace(/^\uFEFF/,''));return rows.map(a=>Object.fromEntries(headers.map((h,i)=>[h,a[i]??''])));}
@@ -53,8 +54,8 @@ function genericTire(brand){return `<div class="generic-tire" aria-label="Imagen
 document.getElementById('videoToggle')?.addEventListener('click',e=>{e.preventDefault();const el=document.getElementById('serviceVideo');el.classList.toggle('visible');e.currentTarget.textContent=el.classList.contains('visible')?'Ocultar galería ↑':'Ver sección de servicios ↓';});
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function brands(){let current=$('brand').value,bs=[...new Set(products.map(p=>p.brand).filter(Boolean))].sort();$('brand').innerHTML='<option value="">Todas las marcas</option>'+bs.map(b=>`<option>${esc(b)}</option>`).join('');if(bs.includes(current))$('brand').value=current;}
-async function connect(){let url=$('csvUrl').value.trim();if(!url){$('setupMsg').textContent='Pega primero la URL CSV publicada.';return}try{$('setupMsg').textContent='Conectando…';let res=await fetch(url);if(!res.ok)throw Error('No se pudo leer la hoja. Verifica que esté publicada como CSV.');let raw=parseCSV(await res.text()).map(normalize).filter(p=>p&&p.size&&p.brand&&p.cash>0);if(!raw.length)throw Error('No se encontraron filas válidas. Revisa los encabezados de la hoja Catalogo.');products=raw;csvConnected=true;localStorage.setItem('derielCsvUrl',url);$('setupMsg').textContent=`Conectado. ${raw.length} productos cargados desde Google Sheets. Para ver cambios nuevos, pulsa Conectar catálogo otra vez o recarga la página.`;brands();render()}catch(e){$('setupMsg').textContent='Error: '+e.message+' Si el enlace de Google no funciona directamente, verifica que hayas publicado la pestaña como CSV.'}}
+async function connect(){let url=$('csvUrl').value.trim();if(!url){$('setupMsg').textContent='Pega primero la URL CSV publicada.';return}try{$('setupMsg').textContent='Conectando…';let res=await fetch(url,{cache:'no-store'});if(!res.ok)throw Error('No se pudo leer la hoja. Verifica que esté publicada como CSV.');let raw=parseCSV(await res.text()).map(normalize).filter(p=>p&&p.size&&p.brand&&p.cash>0);if(!raw.length)throw Error('No se encontraron filas válidas. Revisa los encabezados de la hoja Catalogo.');products=raw;csvConnected=true;localStorage.setItem('derielCsvUrl',url);$('setupMsg').textContent=`Conectado. ${raw.length} productos cargados desde Google Sheets. Para ver cambios nuevos, pulsa Conectar catálogo otra vez o recarga la página.`;brands();render()}catch(e){$('setupMsg').textContent='Error: '+e.message+' Si el enlace de Google no funciona directamente, verifica que hayas publicado la pestaña como CSV.'}}
 $('connect').onclick=connect;$('forget').onclick=()=>{localStorage.removeItem('derielCsvUrl');$('csvUrl').value='';products=demo.slice();csvConnected=false;brands();render();$('setupMsg').textContent='Desconectado. Mostrando catálogo de ejemplo.'};$('q').oninput=render;$('brand').onchange=render;
-$('csvUrl').value=localStorage.getItem('derielCsvUrl')||'';brands();render();
-if($('csvUrl').value)connect();
+$('csvUrl').value='https://docs.google.com/spreadsheets/d/e/2PACX-1vSJWR2dzguh2fVxtwZdR-dp2kU-VPtqyifo_kqP1pxZeLhk4TRSns1PJJRdE01L2U36n2Rbj3BIZFUz/pub?gid=1585011700&single=true&output=csv';brands();render();
+connect();
 </script></body></html>

@@ -11,7 +11,7 @@ main{max-width:1200px;margin:18px auto;padding:0 14px}.setup,.filters,.card{back
 .setup{border-left:5px solid #f0b429}.setup h2{margin:0 0 8px;font-size:18px}.setup p{margin:5px 0;color:#475c70;line-height:1.45}
 input,select,button{font:inherit;border-radius:9px;padding:11px;border:1px solid #cbd7e4}input{width:100%}button{cursor:pointer;background:var(--navy);color:white;border:0;font-weight:700}
 .row{display:grid;grid-template-columns:2fr 1fr auto;gap:9px;align-items:center}.filters{display:grid;grid-template-columns:2fr 1fr;gap:10px}.status{color:var(--muted);font-size:13px;margin:10px 2px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:14px}.card{padding:0;overflow:hidden;margin:0}.photo{height:165px;background:linear-gradient(145deg,#f0f5fa,#fff);display:flex;align-items:center;justify-content:center;color:#8193a6;font-size:56px;overflow:hidden}.photo img{width:100%;height:100%;object-fit:contain}.body{padding:14px}.brand{font-size:12px;color:var(--blue);font-weight:800;letter-spacing:.08em;text-transform:uppercase;min-height:28px;display:flex;align-items:center}.brand-logo{max-width:142px;max-height:30px;object-fit:contain;object-position:left center;background:transparent;padding:0;border-radius:0}.brand-logo-austone{width:126px;height:30px;display:block}.size{font-size:22px;font-weight:800;margin:5px 0}.price{font-size:25px;color:var(--navy);font-weight:800}.sub{font-size:12px;color:var(--muted)}.msi{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:6px}.pill{background:var(--pale);border-radius:8px;padding:8px;font-size:12px}.pill b{display:block;margin-top:4px}.quote{display:block;text-align:center;text-decoration:none;margin-top:12px;background:#0b8f59;color:white;padding:11px;border-radius:9px;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(245px,1fr));gap:14px}.card{padding:0;overflow:hidden;margin:0}.photo{height:165px;background:linear-gradient(145deg,#f0f5fa,#fff);display:flex;align-items:center;justify-content:center;color:#8193a6;font-size:56px;overflow:hidden}.photo img{width:100%;height:100%;object-fit:contain}.body{padding:14px}.brand{font-size:12px;color:var(--blue);font-weight:800;letter-spacing:.08em;text-transform:uppercase;min-height:28px;display:flex;align-items:center}.brand-logo-image{display:block;width:142px;max-width:100%;height:34px;max-height:34px;object-fit:contain;object-position:left center;background:transparent;padding:0;border-radius:0}.brand-fallback{display:inline-block;font-weight:900}.brand-logo-austone{width:126px;height:30px;display:block}.size{font-size:22px;font-weight:800;margin:5px 0}.price{font-size:25px;color:var(--navy);font-weight:800}.sub{font-size:12px;color:var(--muted)}.msi{margin-top:12px;display:grid;grid-template-columns:1fr 1fr;gap:6px}.pill{background:var(--pale);border-radius:8px;padding:8px;font-size:12px}.pill b{display:block;margin-top:4px}.quote{display:block;text-align:center;text-decoration:none;margin-top:12px;background:#0b8f59;color:white;padding:11px;border-radius:9px;font-weight:700}
 .empty{padding:40px;text-align:center;color:var(--muted);background:white;border-radius:14px}.foot{font-size:12px;color:var(--muted);padding:18px 3px}
 @media(max-width:620px){.brand-head{align-items:flex-start;gap:12px}.brand-logo{width:112px;max-height:76px}.brand-copy h1{font-size:30px}.service-panel{grid-template-columns:1fr}.service-visual{min-height:105px}.generic-tire svg{width:68px;height:68px}.row{grid-template-columns:1fr}.filters{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.body{padding:10px}.photo{height:110px}.size{font-size:17px}.price{font-size:19px}.msi{grid-template-columns:1fr}.pill{padding:6px}.card{border-radius:11px}}
 
@@ -75,12 +75,7 @@ input,select,button{font:inherit;border-radius:9px;padding:11px;border:1px solid
 @media(max-width:560px){.brand-logo-image{width:110px;height:25px}.brand-logos img{max-width:112px;height:27px}}
 
 
-.photo-manager{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin:24px auto;box-shadow:0 8px 26px #0b2e590b}
-.manager-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:16px}.manager-head h2{margin:3px 0;color:var(--navy);font-size:clamp(23px,3vw,30px)}.manager-head p{margin:0;color:var(--muted)}.manager-head .eyebrow{font-size:11px;font-weight:800;letter-spacing:.13em;color:#1768a8}.manager-icon{font-size:32px;color:#1768a8;background:#edf5fc;border-radius:13px;padding:12px}
-.manager-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.manager-upload,.manager-controls{padding:16px;border:1px solid var(--line);border-radius:12px;background:#f9fbfd;display:flex;flex-direction:column;gap:9px}.manager-upload label,.manager-controls label{font-weight:800;color:#183958;font-size:13px}.manager-upload input,.manager-controls input,.manager-controls select{width:100%;min-width:0;padding:11px;border:1px solid #cad8e5;border-radius:9px;background:white;font:inherit;color:#24394c}.manager-upload p{font-size:12px;color:#65798c;margin:0}.manager-controls button{background:#0b4d88;color:white;border:0;border-radius:9px;padding:12px;font-weight:800;cursor:pointer}
-.manager-preview{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-top:14px}.manager-thumb{border:1px solid var(--line);border-radius:10px;padding:8px;min-width:0}.manager-thumb img{width:100%;height:120px;object-fit:contain;background:#f2f5f8;border-radius:7px}.manager-thumb strong{display:block;font-size:12px;overflow-wrap:anywhere;margin-top:6px}.manager-thumb small{color:#687b8c;font-size:11px}.manager-empty{padding:22px;text-align:center;color:#738598;background:#f7f9fb;border:1px dashed #cbd8e5;border-radius:10px;grid-column:1/-1}
-.manager-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.manager-actions button{border-radius:9px;padding:10px 13px;cursor:pointer;font-weight:700}.manager-actions .secondary{background:#eaf2f9;border:1px solid #d0dfed;color:#123c63}.manager-actions .text-button{background:transparent;border:0;color:#6b7e91}.manager-actions button:disabled{opacity:.45;cursor:not-allowed}.manager-status{font-size:12px;color:#526b80;margin:12px 0 0;line-height:1.5}
-@media(max-width:650px){.manager-grid{grid-template-columns:1fr}.photo-manager{padding:15px}.manager-head{align-items:flex-start}.manager-icon{font-size:24px;padding:8px}}
+}
 \n</style></head><body>
 <header class="site-header"><div class="nav-wrap"><a class="logo-link" href="#inicio"><img class="site-logo" src="logo-deriel.jpg" alt="Llantera Deriel"></a><nav class="main-nav" aria-label="Navegación principal"><a href="#inicio">⌂ Inicio</a><a href="#catalogo">◉ Llantas</a><a href="#servicios">✣ Servicios</a><a href="#videos">▣ Videos</a><a href="#ubicacion">⌖ Ubicación</a></nav><a class="nav-quote" href="https://wa.me/529511037358?text=Hola%2C%20Llantera%20Deriel%2C%20quiero%20cotizar." target="_blank" rel="noopener">☏ Cotizar por WhatsApp ↗</a></div></header>
 
@@ -123,16 +118,6 @@ input,select,button{font:inherit;border-radius:9px;padding:11px;border:1px solid
 <p>Para sincronizar precios y productos, publica <b>solo la hoja Catalogo</b> como CSV desde Google Sheets y pega aquí el enlace publicado. No uses una hoja que contenga costos o información privada.</p>
 <div class="row"><input id="csvUrl" placeholder="Pega aquí la URL CSV publicada de Google Sheets"><button id="connect">Conectar catálogo</button><button id="forget" type="button">Desconectar</button></div>
 <p id="setupMsg" class="status">Cargando precios desde Google Sheets…</p></section>
-<section class="photo-manager wrap" id="gestorFotos">
- <div class="manager-head"><div><span class="eyebrow">HERRAMIENTA DEL NEGOCIO</span><h2>Asocia fotos a tus llantas</h2><p>Selecciona una foto de tu equipo y asígnala a una medida del catálogo.</p></div><span class="manager-icon">▧</span></div>
- <div class="manager-grid">
-  <div class="manager-upload"><label for="tirePhotoFiles">1. Selecciona una o varias fotos</label><input id="tirePhotoFiles" type="file" accept="image/*" multiple><p>Las fotos se procesan en tu navegador. No se publican automáticamente en internet.</p></div>
-  <div class="manager-controls"><label for="tirePhotoProduct">2. Producto al que pertenece la foto</label><select id="tirePhotoProduct"><option value="">Conecta el catálogo y selecciona un producto</option></select><label for="tirePhotoUrl">Ruta pública de la foto (opcional)</label><input id="tirePhotoUrl" placeholder="fotos/marca-medida.jpg"><button id="assignTirePhoto" type="button">Asociar foto al producto</button></div>
- </div>
- <div id="tirePhotoPreview" class="manager-preview"><div class="manager-empty">Selecciona una foto para ver la vista previa.</div></div>
- <div class="manager-actions"><button id="downloadTirePhoto" class="secondary" type="button" disabled>Descargar foto optimizada</button><button id="exportTirePhotoMap" class="secondary" type="button">Exportar asociaciones CSV</button><button id="clearTirePhotoMap" class="text-button" type="button">Limpiar asociaciones locales</button></div>
- <p id="tirePhotoStatus" class="manager-status" role="status">Las asociaciones locales se guardan en este navegador. Para que todos los clientes vean las fotos, sube las imágenes a GitHub y pega sus URL en la columna Foto URL de Google Sheets.</p>
-</section>
 \n<section class="filters" id="catalogo"><input id="q" placeholder="Buscar medida o marca, ej. 225/70R15C"><select id="brand"><option value="">Todas las marcas</option></select></section>
 <div class="status" id="count"></div><section class="grid" id="grid"></section>
 <div class="foot">Los precios a meses son estimaciones y deben confirmarse con la tasa vigente del proveedor de pagos. La disponibilidad puede cambiar. Para cotizar, contacta a Llantera Deriel.<br><a class="quote" style="max-width:360px" href="https://wa.me/529511037358?text=Hola%2C%20Llantera%20Deriel%2C%20quiero%20una%20cotizaci%C3%B3n." target="_blank" rel="noopener">Contactar a Deriel por WhatsApp</a></div>
@@ -169,20 +154,23 @@ const BRAND_LOGOS={
   "UNIROYALE":"https://www.uniroyaltires.com/"
 };
 function brandMark(name){
- const key=String(name||'').trim().toUpperCase().replace(/\\s+/g,' ');
- const logos={
-  'MICHELIN':'logos/michelin.png',
-  'BRIDGESTONE':'logos/bridgestone.png',
-  'BF GOODRICH':'logos/bf-goodrich.png','BF GOODRICH TIRES':'logos/bf-goodrich.png',
-  'FIRESTONE':'logos/firestone.png',
-  'UNIROYAL':'logos/uniroyal.png','UNIROYALE':'logos/uniroyal.png',
-  'ROADTRACK':'logos/roadtrack.png',
-  'ARIVO':'logos/arivo.png',
-  'AUSTONE':'logos/austone.png'
- };
- if(logos[key]) return `<img class="brand-logo brand-logo-image" src="${logos[key]}" alt="Logotipo ${esc(name)}" loading="lazy">`;
- const styles={"CONTINENTAL":"font-weight:900;color:#161616","NEXEN":"font-style:italic;font-weight:900;color:#72409a","TORNEL":"font-style:italic;font-weight:900;color:#c21f32","ATLAS":"font-style:italic;font-weight:900;color:#cf2027","ATLAS TIRES":"font-style:italic;font-weight:900;color:#cf2027","PEGASUS":"font-style:italic;font-weight:900;color:#244f8b","OVATION":"font-style:italic;font-weight:900;color:#263746"};
- return `<span style="${styles[key]||'font-weight:900;color:#145b9d'}">${esc(name)}</span>`;
+ const raw=String(name||'').trim();
+ const key=raw.toUpperCase().replace(/\s+/g,' ');
+ const logos=[
+  {keys:['MICHELIN'],src:'logos/michelin.png',alt:'Michelin'},
+  {keys:['BRIDGESTONE'],src:'logos/bridgestone.png',alt:'Bridgestone'},
+  {keys:['BF GOODRICH','BFGOODRICH','B F GOODRICH'],src:'logos/bf-goodrich.png',alt:'BFGoodrich'},
+  {keys:['FIRESTONE'],src:'logos/firestone.png',alt:'Firestone'},
+  {keys:['UNIROYAL'],src:'logos/uniroyal.png',alt:'Uniroyal'},
+  {keys:['ROADTRACK'],src:'logos/roadtrack.png',alt:'Roadtrack'},
+  {keys:['ARIVO'],src:'logos/arivo.png',alt:'Arivo'},
+  {keys:['AUSTONE'],src:'logos/austone.png',alt:'Austone'}
+ ];
+ const match=logos.find(item=>item.keys.some(k=>key.includes(k)));
+ if(match) return `<img class="brand-logo brand-logo-image" src="${match.src}" alt="Logotipo ${match.alt}" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span class=brand-fallback>${match.alt}</span>')">`;
+ const styles={"CONTINENTAL":"font-weight:900;color:#161616","NEXEN":"font-style:italic;font-weight:900;color:#72409a","TORNEL":"font-style:italic;font-weight:900;color:#c21f32","ATLAS":"font-style:italic;font-weight:900;color:#cf2027","PEGASUS":"font-style:italic;font-weight:900;color:#244f8b","OVATION":"font-style:italic;font-weight:900;color:#263746"};
+ const fallback=Object.keys(styles).find(k=>key.includes(k))||raw;
+ return `<span class="brand-fallback" style="${styles[fallback]||'font-weight:900;color:#145b9d'}">${esc(fallback)}</span>`;
 }
 function render(){let q=$('q').value.toLowerCase().trim(),b=$('brand').value;let list=products.filter(p=>(!q||(p.size+' '+p.brand).toLowerCase().includes(q))&&(!b||p.brand===b));$('count').textContent=`${list.length} productos`;if(!list.length){$('grid').innerHTML='<div class="empty">No encontramos esa llanta. Solicita una cotización.</div>';return}
 $('grid').innerHTML=list.map(p=>{let title=encodeURIComponent(`Hola, quiero cotizar ${p.size} ${p.brand}. ¿Tienen disponibilidad?`),wa=WA_NUMBER?`https://wa.me/${WA_NUMBER}?text=${title}`:`https://wa.me/?text=${title}`;
@@ -208,26 +196,4 @@ async function connect(){let url=$('csvUrl').value.trim();if(!url){$('setupMsg')
 $('connect').onclick=connect;$('forget').onclick=()=>{localStorage.removeItem('derielCsvUrl');$('csvUrl').value='';products=demo.slice();csvConnected=false;brands();render();$('setupMsg').textContent='Desconectado. Mostrando catálogo de ejemplo.'};$('q').oninput=render;$('brand').onchange=render;
 $('csvUrl').value='https://docs.google.com/spreadsheets/d/e/2PACX-1vSJWR2dzguh2fVxtwZdR-dp2kU-VPtqyifo_kqP1pxZeLhk4TRSns1PJJRdE01L2U36n2Rbj3BIZFUz/pub?gid=1585011700&single=true&output=csv';brands();render();
 connect();
-</script><script>
-// Gestor integrado de fotografías por producto
-(function(){
- const fileInput=document.getElementById('tirePhotoFiles');if(!fileInput)return;
- const productSelect=document.getElementById('tirePhotoProduct'),preview=document.getElementById('tirePhotoPreview'),urlInput=document.getElementById('tirePhotoUrl'),status=document.getElementById('tirePhotoStatus');
- let selectedFiles=[],activeIndex=0,localMap={};
- try{localMap=JSON.parse(localStorage.getItem('derielPhotoMap')||'{}')}catch(e){localMap={}}
- const safeSlug=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
- function keyFor(p){return (p.size+'|'+p.brand).toLowerCase()}
- function fillProducts(){if(!productSelect)return;let old=productSelect.value;let list=(typeof products!=='undefined'?products:[]);productSelect.innerHTML='<option value="">Selecciona un producto del catálogo</option>'+list.map((p,i)=>`<option value="${i}">${String(p.size||'').replace(/[&<>"]/g,'')} · ${String(p.brand||'').replace(/[&<>"]/g,'')}</option>`).join('');if(old)productSelect.value=old}
- function draw(){preview.innerHTML='';if(!selectedFiles.length){preview.innerHTML='<div class="manager-empty">Selecciona una foto para ver la vista previa.</div>';document.getElementById('downloadTirePhoto').disabled=true;return}
- selectedFiles.forEach((it,i)=>{let div=document.createElement('div');div.className='manager-thumb';let im=document.createElement('img');im.src=it.url;im.alt=it.file.name;div.appendChild(im);let b=document.createElement('strong');b.textContent=it.file.name;div.appendChild(b);let sm=document.createElement('small');sm.textContent=(i===activeIndex?'Foto seleccionada':'Pulsa para seleccionar');div.appendChild(sm);div.style.outline=i===activeIndex?'2px solid #1768a8':'none';div.style.cursor='pointer';div.onclick=()=>{activeIndex=i;urlInput.value=it.publicUrl||'';draw();document.getElementById('downloadTirePhoto').disabled=false};preview.appendChild(div)});
- document.getElementById('downloadTirePhoto').disabled=false}
- fileInput.addEventListener('change',()=>{selectedFiles.forEach(x=>URL.revokeObjectURL(x.url));selectedFiles=[...fileInput.files].filter(f=>f.type.startsWith('image/')).map(file=>({file,url:URL.createObjectURL(file),publicUrl:''}));activeIndex=0;draw();status.textContent=selectedFiles.length+' foto(s) seleccionadas. Elige un producto para asociar la foto.'});
- document.getElementById('assignTirePhoto').addEventListener('click',()=>{let idx=Number(productSelect.value);let list=(typeof products!=='undefined'?products:[]);if(!selectedFiles.length){status.textContent='Primero selecciona una fotografía.';return}if(!productSelect.value||!list[idx]){status.textContent='Conecta el catálogo y selecciona el producto correspondiente.';return}let p=list[idx],it=selectedFiles[activeIndex];it.publicUrl=urlInput.value.trim();localMap[keyFor(p)]={size:p.size,brand:p.brand,photoUrl:it.publicUrl||('fotos/'+safeSlug(p.brand)+'-'+safeSlug(p.size)+'.jpg'),fileName:safeSlug(p.brand)+'-'+safeSlug(p.size)+'.jpg',localOnly:!it.publicUrl};localStorage.setItem('derielPhotoMap',JSON.stringify(localMap));status.textContent='Asociación guardada en este navegador para '+p.size+' · '+p.brand+'. Para publicarla a todos los clientes, sube la foto con el nombre sugerido y usa su URL en Google Sheets.';});
- document.getElementById('downloadTirePhoto').addEventListener('click',()=>{let it=selectedFiles[activeIndex];if(!it)return;let im=new Image(),u=it.url;im.onload=()=>{let scale=Math.min(1,1800/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*scale);c.height=Math.round(im.height*scale);let ctx=c.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,c.width,c.height);ctx.drawImage(im,0,0,c.width,c.height);c.toBlob(blob=>{let a=document.createElement('a'),name=it.file.name.replace(/\.[^.]+$/,'').replace(/[^a-z0-9_-]+/gi,'-')+'.jpg';a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);status.textContent='Foto optimizada descargada: '+name},'image/jpeg',.9)};im.src=u});
- document.getElementById('exportTirePhotoMap').addEventListener('click',()=>{let rows=[['Medida','Marca/Modelo','Foto URL','Nombre de archivo']];Object.values(localMap).forEach(x=>rows.push([x.size,x.brand,x.photoUrl,x.fileName]));let csv=rows.map(r=>r.map(v=>'"'+String(v||'').replace(/"/g,'""')+'"').join(',')).join('\r\n'),blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='deriel-asociaciones-fotos.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);status.textContent='CSV exportado. Úsalo como guía para actualizar Foto URL en Google Sheets.'});
- document.getElementById('clearTirePhotoMap').addEventListener('click',()=>{if(confirm('¿Borrar las asociaciones guardadas en este navegador?')){localMap={};localStorage.removeItem('derielPhotoMap');status.textContent='Asociaciones locales eliminadas.'}});
- // Called after the catalog fetch completes; wraps render hooks to keep options updated.
- const oldRender=window.render;if(typeof oldRender==='function'){window.render=function(){oldRender();fillProducts()}}
- fillProducts();setTimeout(fillProducts,1200);setTimeout(fillProducts,3500);
-})();
 </script>\n</body></html>

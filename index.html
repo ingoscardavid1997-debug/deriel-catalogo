@@ -50,10 +50,41 @@ input,select,button{font:inherit;border-radius:9px;padding:11px;border:1px solid
 .location-card a{display:inline-block;background:#145b9d;color:#fff;text-decoration:none;border-radius:10px;padding:12px 16px;font-weight:800;white-space:nowrap}
 @media(max-width:700px){.hero-grid,.video-shell{grid-template-columns:1fr}.hero-copy{min-height:210px;padding:20px}.hero-art{min-height:190px}.tire-illustration{width:125px;height:125px}.services-grid{grid-template-columns:1fr}.location-card{align-items:flex-start;flex-direction:column}.location-card a{white-space:normal}.section-heading h2{font-size:27px}}
 
-</style></head><body>
-<header><div class="wrap brand-head"><img class="brand-logo" src="logo-deriel.jpg" alt="Logo Deriel"><div class="brand-copy"><h1>LLANTERA DERIEL</h1><p>Encuentra tu medida. Cotiza tu próxima llanta.</p></div></div></header>
 
-<section class="hero-showcase">
+/* Encabezado y portada premium Deriel */
+.site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid #dce5ef;color:#0b2e59;padding:0 20px}
+.nav-wrap{max-width:1320px;min-height:68px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo-link{display:flex;align-items:center;flex:0 0 auto}.site-logo{width:190px;max-height:54px;object-fit:contain}
+.main-nav{display:flex;align-items:center;gap:clamp(12px,2vw,30px)}.main-nav a{font-size:13px;font-weight:700;color:#274563;text-decoration:none;padding:24px 0;border-bottom:3px solid transparent}.main-nav a:hover{color:#0871c9;border-color:#0871c9}
+.nav-quote{background:#0b4d88;color:#fff;text-decoration:none;font-size:13px;font-weight:800;padding:14px 18px;border-radius:12px;white-space:nowrap;box-shadow:0 5px 14px #0b4d8825}
+.hero-showcase{max-width:none;margin:0;padding:0}.hero-grid{max-width:none;grid-template-columns:1fr;gap:0}.hero-copy{position:relative;isolation:isolate;overflow:hidden;border-radius:0;min-height:345px;padding:42px max(5.4vw,24px);background:linear-gradient(90deg,rgba(4,25,50,.98) 0%,rgba(4,25,50,.88) 37%,rgba(4,25,50,.2) 76%),url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=2200&q=85') center 54%/cover no-repeat}
+.hero-copy .eyebrow{color:#c7e2ff}.hero-copy h2{max-width:620px;font-family:Inter,Arial,sans-serif;font-size:clamp(36px,5vw,62px);font-weight:800;letter-spacing:-.04em;line-height:1.02}.hero-copy h2 strong,.hero-copy h2 em{color:#58a9ff}.hero-copy p{max-width:540px;font-size:16px}.hero-actions a{padding:14px 20px;border-radius:10px}.hero-actions a.secondary{background:rgba(255,255,255,.96);color:#0b2e59}
+.hero-art.hero-photo{position:absolute;right:5%;bottom:24px;min-height:auto;width:auto;border:0;border-radius:12px;background:rgba(3,27,53,.82);padding:14px 20px;display:block;color:white;box-shadow:0 10px 28px #0003}.hero-photo-overlay{display:none}.hero-photo-caption{display:flex;flex-direction:column;gap:4px}.hero-photo-caption span{font-size:10px;letter-spacing:.12em;color:#b9d9f7;font-weight:800}.hero-photo-caption strong{font-size:18px}.hero-photo-caption small{font-size:12px;color:#d5e7f8}
+.section-heading{margin-top:24px}.services-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.brand-strip{background:linear-gradient(180deg,#fff,#f4f7fa);border-top:1px solid #e4eaf1;border-bottom:1px solid #e4eaf1;padding:20px max(5vw,18px);margin:22px 0}.brand-strip-head{max-width:1320px;margin:0 auto 14px}.brand-strip-head h2{font-family:Inter,Arial,sans-serif;font-size:24px;color:#0b2e59;margin:0 0 4px;font-weight:800}.brand-strip-head p{margin:0;color:#667b90;font-size:13px}.brand-logos{max-width:1320px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}.brand-logos span{display:inline-flex;align-items:center;justify-content:center;min-height:34px;font-size:clamp(13px,1.3vw,20px);font-weight:900;font-style:italic;letter-spacing:-.04em;color:#26394c;white-space:nowrap}.brand-logos .logo-michelin{color:#1768a8;font-style:italic}.brand-logos .logo-bridgestone{color:#161d25;letter-spacing:-.07em}.brand-logos .logo-continental{font-family:Georgia,serif;color:#111;font-size:20px}.brand-logos .logo-bfg{color:#1b66a7;text-decoration:underline;text-decoration-color:#e52d36;text-decoration-thickness:3px}.brand-logos .logo-uniroyal{color:#242a33}.brand-logos .logo-nexen{color:#72409a;letter-spacing:.02em}.brand-logos .logo-tornel{color:#b71e2c}.brand-logos .logo-austone{color:#111;display:flex;flex-direction:column;line-height:.9}.brand-logos .logo-austone small{font-size:9px;letter-spacing:.14em;align-self:flex-end}.brand-logos .logo-atlas{color:#d62d32}.brand-logos .logo-roadtrack{color:#c32430}
+#catalogo{scroll-margin-top:82px}.video-section{scroll-margin-top:82px}.video-shell{border-radius:0;padding:24px clamp(16px,5vw,70px);margin:0 -14px}.video-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}.video-card{border-color:#536a82;box-shadow:0 4px 12px #001a3022}.video-card h3{font-size:12px}.location-card{box-shadow:0 8px 24px #0b2e5909}
+@media(max-width:900px){.nav-wrap{flex-wrap:wrap;padding:10px 0;gap:12px}.site-logo{width:145px}.main-nav{order:3;width:100%;justify-content:space-between;gap:8px}.main-nav a{padding:10px 0;font-size:12px}.nav-quote{font-size:12px;padding:11px 13px}.hero-copy{min-height:330px}.hero-art.hero-photo{right:18px;bottom:16px}.video-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:560px){.site-header{padding:0 12px}.site-logo{width:125px}.nav-quote{font-size:11px;padding:10px}.main-nav a{font-size:11px}.hero-copy{padding:30px 20px 105px;min-height:390px;background-position:58% center}.hero-copy h2{font-size:39px}.hero-copy p{font-size:14px}.hero-art.hero-photo{left:20px;right:auto;bottom:14px;padding:10px 13px}.hero-photo-caption strong{font-size:14px}.hero-photo-caption small{font-size:10px}.services-grid{grid-template-columns:1fr}.brand-logos{justify-content:center;gap:15px 22px}.brand-logos span{font-size:14px}.video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.video-shell{margin:0 -14px;padding:18px 14px}}
+
+
+.brand-logo-image{width:142px;max-width:100%;height:32px;object-fit:contain;object-position:left center}
+.brand-logos img{max-width:140px;width:auto;height:32px;object-fit:contain;display:block}
+.brand-logos img[alt="Austone Tires"]{max-width:145px;height:42px}
+.brand-logos img[alt="Michelin"]{max-width:150px}
+.brand-logos img[alt="BFGoodrich"]{max-width:150px}
+@media(max-width:560px){.brand-logo-image{width:110px;height:25px}.brand-logos img{max-width:112px;height:27px}}
+
+
+.photo-manager{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin:24px auto;box-shadow:0 8px 26px #0b2e590b}
+.manager-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:16px}.manager-head h2{margin:3px 0;color:var(--navy);font-size:clamp(23px,3vw,30px)}.manager-head p{margin:0;color:var(--muted)}.manager-head .eyebrow{font-size:11px;font-weight:800;letter-spacing:.13em;color:#1768a8}.manager-icon{font-size:32px;color:#1768a8;background:#edf5fc;border-radius:13px;padding:12px}
+.manager-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.manager-upload,.manager-controls{padding:16px;border:1px solid var(--line);border-radius:12px;background:#f9fbfd;display:flex;flex-direction:column;gap:9px}.manager-upload label,.manager-controls label{font-weight:800;color:#183958;font-size:13px}.manager-upload input,.manager-controls input,.manager-controls select{width:100%;min-width:0;padding:11px;border:1px solid #cad8e5;border-radius:9px;background:white;font:inherit;color:#24394c}.manager-upload p{font-size:12px;color:#65798c;margin:0}.manager-controls button{background:#0b4d88;color:white;border:0;border-radius:9px;padding:12px;font-weight:800;cursor:pointer}
+.manager-preview{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-top:14px}.manager-thumb{border:1px solid var(--line);border-radius:10px;padding:8px;min-width:0}.manager-thumb img{width:100%;height:120px;object-fit:contain;background:#f2f5f8;border-radius:7px}.manager-thumb strong{display:block;font-size:12px;overflow-wrap:anywhere;margin-top:6px}.manager-thumb small{color:#687b8c;font-size:11px}.manager-empty{padding:22px;text-align:center;color:#738598;background:#f7f9fb;border:1px dashed #cbd8e5;border-radius:10px;grid-column:1/-1}
+.manager-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}.manager-actions button{border-radius:9px;padding:10px 13px;cursor:pointer;font-weight:700}.manager-actions .secondary{background:#eaf2f9;border:1px solid #d0dfed;color:#123c63}.manager-actions .text-button{background:transparent;border:0;color:#6b7e91}.manager-actions button:disabled{opacity:.45;cursor:not-allowed}.manager-status{font-size:12px;color:#526b80;margin:12px 0 0;line-height:1.5}
+@media(max-width:650px){.manager-grid{grid-template-columns:1fr}.photo-manager{padding:15px}.manager-head{align-items:flex-start}.manager-icon{font-size:24px;padding:8px}}
+\n</style></head><body>
+<header class="site-header"><div class="nav-wrap"><a class="logo-link" href="#inicio"><img class="site-logo" src="logo-deriel.jpg" alt="Llantera Deriel"></a><nav class="main-nav" aria-label="Navegación principal"><a href="#inicio">⌂ Inicio</a><a href="#catalogo">◉ Llantas</a><a href="#servicios">✣ Servicios</a><a href="#videos">▣ Videos</a><a href="#ubicacion">⌖ Ubicación</a></nav><a class="nav-quote" href="https://wa.me/529511037358?text=Hola%2C%20Llantera%20Deriel%2C%20quiero%20cotizar." target="_blank" rel="noopener">☏ Cotizar por WhatsApp ↗</a></div></header>
+
+<section class="hero-showcase" id="inicio">
  <div class="hero-grid">
   <div class="hero-copy">
    <span class="eyebrow">Llantera · Alineación 3D · Servicio automotriz</span>
@@ -71,7 +102,7 @@ input,select,button{font:inherit;border-radius:9px;padding:11px;border:1px solid
  </div>
 </section>
 <div class="section-heading"><h2>Servicios para seguir tu camino</h2><p>Atención para autos y camionetas, con equipo especializado.</p></div>
-<section class="services-grid">
+<section class="services-grid" id="servicios">
  <article class="service-card"><div class="service-icon">◉</div><h3>Montaje y balanceo</h3><p>Instalación de neumáticos y balanceo para una rodadura más uniforme.</p></article>
  <article class="service-card"><div class="service-icon">◎</div><h3>Alineación 3D</h3><p>Revisión y ajuste de geometría de dirección y suspensión según especificación del vehículo.</p></article>
  <article class="service-card"><div class="service-icon">⚙</div><h3>Reparación de llantas</h3><p>Evaluación de daños y reparación según la zona y condición del neumático.</p></article>
@@ -84,7 +115,7 @@ input,select,button{font:inherit;border-radius:9px;padding:11px;border:1px solid
   <p class="video-note" id="videoGalleryNote">Videos reales de los servicios de Llantera Deriel. Se muestran en orden aleatorio al cargar la página.</p>
  </div>
 </section>
-<section class="location-section"><div class="location-card"><div><h2>Visítanos en Llantera Deriel</h2><p>Abre Google Maps para consultar la ubicación y las indicaciones disponibles.</p></div><a href="https://www.google.com/maps/search/?api=1&query=Llantera+Deriel+Oaxaca" target="_blank" rel="noopener">Abrir Google Maps ↗</a></div></section>
+<section class="location-section" id="ubicacion"><div class="location-card"><div><h2>Visítanos en Llantera Deriel</h2><p>Abre Google Maps para consultar la ubicación y las indicaciones disponibles.</p></div><a href="https://www.google.com/maps/search/?api=1&query=Llantera+Deriel+Oaxaca" target="_blank" rel="noopener">Abrir Google Maps ↗</a></div></section>
 
 <section class="service-strip"><div class="service-panel"><div><h2>Servicio profesional para tus llantas</h2><p>Montaje, balanceo, alineación 3D y reparación de neumáticos. Consulta disponibilidad y cotiza directamente con Deriel.</p><a class="video-link" id="videoToggle" href="#servicios">Ver sección de servicios ↓</a><div class="service-video" id="serviceVideo"><p><b>Galería de reparaciones</b><br>Consulta la galería de videos reales de los servicios de Deriel.</p></div></div><div class="service-visual"><strong>DERIEL · SERVICIOS</strong><span>LLANTAS · ALINEACIÓN 3D · MANTENIMIENTO AUTOMOTRIZ</span><span>PRECISIÓN EN CADA RUEDA</span></div></div></section>
 <main>
@@ -92,7 +123,17 @@ input,select,button{font:inherit;border-radius:9px;padding:11px;border:1px solid
 <p>Para sincronizar precios y productos, publica <b>solo la hoja Catalogo</b> como CSV desde Google Sheets y pega aquí el enlace publicado. No uses una hoja que contenga costos o información privada.</p>
 <div class="row"><input id="csvUrl" placeholder="Pega aquí la URL CSV publicada de Google Sheets"><button id="connect">Conectar catálogo</button><button id="forget" type="button">Desconectar</button></div>
 <p id="setupMsg" class="status">Cargando precios desde Google Sheets…</p></section>
-<section class="filters"><input id="q" placeholder="Buscar medida o marca, ej. 225/70R15C"><select id="brand"><option value="">Todas las marcas</option></select></section>
+<section class="photo-manager wrap" id="gestorFotos">
+ <div class="manager-head"><div><span class="eyebrow">HERRAMIENTA DEL NEGOCIO</span><h2>Asocia fotos a tus llantas</h2><p>Selecciona una foto de tu equipo y asígnala a una medida del catálogo.</p></div><span class="manager-icon">▧</span></div>
+ <div class="manager-grid">
+  <div class="manager-upload"><label for="tirePhotoFiles">1. Selecciona una o varias fotos</label><input id="tirePhotoFiles" type="file" accept="image/*" multiple><p>Las fotos se procesan en tu navegador. No se publican automáticamente en internet.</p></div>
+  <div class="manager-controls"><label for="tirePhotoProduct">2. Producto al que pertenece la foto</label><select id="tirePhotoProduct"><option value="">Conecta el catálogo y selecciona un producto</option></select><label for="tirePhotoUrl">Ruta pública de la foto (opcional)</label><input id="tirePhotoUrl" placeholder="fotos/marca-medida.jpg"><button id="assignTirePhoto" type="button">Asociar foto al producto</button></div>
+ </div>
+ <div id="tirePhotoPreview" class="manager-preview"><div class="manager-empty">Selecciona una foto para ver la vista previa.</div></div>
+ <div class="manager-actions"><button id="downloadTirePhoto" class="secondary" type="button" disabled>Descargar foto optimizada</button><button id="exportTirePhotoMap" class="secondary" type="button">Exportar asociaciones CSV</button><button id="clearTirePhotoMap" class="text-button" type="button">Limpiar asociaciones locales</button></div>
+ <p id="tirePhotoStatus" class="manager-status" role="status">Las asociaciones locales se guardan en este navegador. Para que todos los clientes vean las fotos, sube las imágenes a GitHub y pega sus URL en la columna Foto URL de Google Sheets.</p>
+</section>
+\n<section class="filters" id="catalogo"><input id="q" placeholder="Buscar medida o marca, ej. 225/70R15C"><select id="brand"><option value="">Todas las marcas</option></select></section>
 <div class="status" id="count"></div><section class="grid" id="grid"></section>
 <div class="foot">Los precios a meses son estimaciones y deben confirmarse con la tasa vigente del proveedor de pagos. La disponibilidad puede cambiar. Para cotizar, contacta a Llantera Deriel.<br><a class="quote" style="max-width:360px" href="https://wa.me/529511037358?text=Hola%2C%20Llantera%20Deriel%2C%20quiero%20una%20cotizaci%C3%B3n." target="_blank" rel="noopener">Contactar a Deriel por WhatsApp</a></div>
 </main>
@@ -128,9 +169,19 @@ const BRAND_LOGOS={
   "UNIROYALE":"https://www.uniroyaltires.com/"
 };
 function brandMark(name){
- const key=String(name||'').trim().toUpperCase();
- if(key==='AUSTONE') return `<svg class="brand-logo-austone" viewBox="0 0 220 54" role="img" aria-label="Logotipo Austone" xmlns="http://www.w3.org/2000/svg"><path d="M9 40 31 8h17l22 32H52l-4-7H30l-4 7Z" fill="#123d68"/><path d="m34 25 6-9 6 9Z" fill="#fff"/><text x="76" y="37" font-family="Arial,sans-serif" font-size="31" font-weight="900" font-style="italic" letter-spacing="-1.5" fill="#123d68">AUSTONE</text><path d="M77 43h128" stroke="#1474bd" stroke-width="3"/></svg>`;
- const styles={"MICHELIN":"font-style:italic;font-weight:900;color:#1655a5","BRIDGESTONE":"font-style:italic;font-weight:900;color:#151515","CONTINENTAL":"font-weight:900;color:#161616","BF GOODRICH":"font-style:italic;font-weight:900;color:#13549a","BF GOODRICH TIRES":"font-style:italic;font-weight:900;color:#13549a","FIRESTONE":"font-style:italic;font-weight:900;color:#cf2027","UNIROYAL":"font-style:italic;font-weight:900;color:#164f9c","UNIROYALE":"font-style:italic;font-weight:900;color:#164f9c","ROADTRACK":"font-style:italic;font-weight:900;color:#25364b","OVATION":"font-style:italic;font-weight:900;color:#263746","ARIVO":"font-style:italic;font-weight:900;color:#24384d","PEGASUS":"font-style:italic;font-weight:900;color:#244f8b"};
+ const key=String(name||'').trim().toUpperCase().replace(/\\s+/g,' ');
+ const logos={
+  'MICHELIN':'logos/michelin.png',
+  'BRIDGESTONE':'logos/bridgestone.png',
+  'BF GOODRICH':'logos/bf-goodrich.png','BF GOODRICH TIRES':'logos/bf-goodrich.png',
+  'FIRESTONE':'logos/firestone.png',
+  'UNIROYAL':'logos/uniroyal.png','UNIROYALE':'logos/uniroyal.png',
+  'ROADTRACK':'logos/roadtrack.png',
+  'ARIVO':'logos/arivo.png',
+  'AUSTONE':'logos/austone.png'
+ };
+ if(logos[key]) return `<img class="brand-logo brand-logo-image" src="${logos[key]}" alt="Logotipo ${esc(name)}" loading="lazy">`;
+ const styles={"CONTINENTAL":"font-weight:900;color:#161616","NEXEN":"font-style:italic;font-weight:900;color:#72409a","TORNEL":"font-style:italic;font-weight:900;color:#c21f32","ATLAS":"font-style:italic;font-weight:900;color:#cf2027","ATLAS TIRES":"font-style:italic;font-weight:900;color:#cf2027","PEGASUS":"font-style:italic;font-weight:900;color:#244f8b","OVATION":"font-style:italic;font-weight:900;color:#263746"};
  return `<span style="${styles[key]||'font-weight:900;color:#145b9d'}">${esc(name)}</span>`;
 }
 function render(){let q=$('q').value.toLowerCase().trim(),b=$('brand').value;let list=products.filter(p=>(!q||(p.size+' '+p.brand).toLowerCase().includes(q))&&(!b||p.brand===b));$('count').textContent=`${list.length} productos`;if(!list.length){$('grid').innerHTML='<div class="empty">No encontramos esa llanta. Solicita una cotización.</div>';return}
@@ -157,4 +208,26 @@ async function connect(){let url=$('csvUrl').value.trim();if(!url){$('setupMsg')
 $('connect').onclick=connect;$('forget').onclick=()=>{localStorage.removeItem('derielCsvUrl');$('csvUrl').value='';products=demo.slice();csvConnected=false;brands();render();$('setupMsg').textContent='Desconectado. Mostrando catálogo de ejemplo.'};$('q').oninput=render;$('brand').onchange=render;
 $('csvUrl').value='https://docs.google.com/spreadsheets/d/e/2PACX-1vSJWR2dzguh2fVxtwZdR-dp2kU-VPtqyifo_kqP1pxZeLhk4TRSns1PJJRdE01L2U36n2Rbj3BIZFUz/pub?gid=1585011700&single=true&output=csv';brands();render();
 connect();
-</script></body></html>
+</script><script>
+// Gestor integrado de fotografías por producto
+(function(){
+ const fileInput=document.getElementById('tirePhotoFiles');if(!fileInput)return;
+ const productSelect=document.getElementById('tirePhotoProduct'),preview=document.getElementById('tirePhotoPreview'),urlInput=document.getElementById('tirePhotoUrl'),status=document.getElementById('tirePhotoStatus');
+ let selectedFiles=[],activeIndex=0,localMap={};
+ try{localMap=JSON.parse(localStorage.getItem('derielPhotoMap')||'{}')}catch(e){localMap={}}
+ const safeSlug=s=>(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+ function keyFor(p){return (p.size+'|'+p.brand).toLowerCase()}
+ function fillProducts(){if(!productSelect)return;let old=productSelect.value;let list=(typeof products!=='undefined'?products:[]);productSelect.innerHTML='<option value="">Selecciona un producto del catálogo</option>'+list.map((p,i)=>`<option value="${i}">${String(p.size||'').replace(/[&<>"]/g,'')} · ${String(p.brand||'').replace(/[&<>"]/g,'')}</option>`).join('');if(old)productSelect.value=old}
+ function draw(){preview.innerHTML='';if(!selectedFiles.length){preview.innerHTML='<div class="manager-empty">Selecciona una foto para ver la vista previa.</div>';document.getElementById('downloadTirePhoto').disabled=true;return}
+ selectedFiles.forEach((it,i)=>{let div=document.createElement('div');div.className='manager-thumb';let im=document.createElement('img');im.src=it.url;im.alt=it.file.name;div.appendChild(im);let b=document.createElement('strong');b.textContent=it.file.name;div.appendChild(b);let sm=document.createElement('small');sm.textContent=(i===activeIndex?'Foto seleccionada':'Pulsa para seleccionar');div.appendChild(sm);div.style.outline=i===activeIndex?'2px solid #1768a8':'none';div.style.cursor='pointer';div.onclick=()=>{activeIndex=i;urlInput.value=it.publicUrl||'';draw();document.getElementById('downloadTirePhoto').disabled=false};preview.appendChild(div)});
+ document.getElementById('downloadTirePhoto').disabled=false}
+ fileInput.addEventListener('change',()=>{selectedFiles.forEach(x=>URL.revokeObjectURL(x.url));selectedFiles=[...fileInput.files].filter(f=>f.type.startsWith('image/')).map(file=>({file,url:URL.createObjectURL(file),publicUrl:''}));activeIndex=0;draw();status.textContent=selectedFiles.length+' foto(s) seleccionadas. Elige un producto para asociar la foto.'});
+ document.getElementById('assignTirePhoto').addEventListener('click',()=>{let idx=Number(productSelect.value);let list=(typeof products!=='undefined'?products:[]);if(!selectedFiles.length){status.textContent='Primero selecciona una fotografía.';return}if(!productSelect.value||!list[idx]){status.textContent='Conecta el catálogo y selecciona el producto correspondiente.';return}let p=list[idx],it=selectedFiles[activeIndex];it.publicUrl=urlInput.value.trim();localMap[keyFor(p)]={size:p.size,brand:p.brand,photoUrl:it.publicUrl||('fotos/'+safeSlug(p.brand)+'-'+safeSlug(p.size)+'.jpg'),fileName:safeSlug(p.brand)+'-'+safeSlug(p.size)+'.jpg',localOnly:!it.publicUrl};localStorage.setItem('derielPhotoMap',JSON.stringify(localMap));status.textContent='Asociación guardada en este navegador para '+p.size+' · '+p.brand+'. Para publicarla a todos los clientes, sube la foto con el nombre sugerido y usa su URL en Google Sheets.';});
+ document.getElementById('downloadTirePhoto').addEventListener('click',()=>{let it=selectedFiles[activeIndex];if(!it)return;let im=new Image(),u=it.url;im.onload=()=>{let scale=Math.min(1,1800/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*scale);c.height=Math.round(im.height*scale);let ctx=c.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,c.width,c.height);ctx.drawImage(im,0,0,c.width,c.height);c.toBlob(blob=>{let a=document.createElement('a'),name=it.file.name.replace(/\.[^.]+$/,'').replace(/[^a-z0-9_-]+/gi,'-')+'.jpg';a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);status.textContent='Foto optimizada descargada: '+name},'image/jpeg',.9)};im.src=u});
+ document.getElementById('exportTirePhotoMap').addEventListener('click',()=>{let rows=[['Medida','Marca/Modelo','Foto URL','Nombre de archivo']];Object.values(localMap).forEach(x=>rows.push([x.size,x.brand,x.photoUrl,x.fileName]));let csv=rows.map(r=>r.map(v=>'"'+String(v||'').replace(/"/g,'""')+'"').join(',')).join('\r\n'),blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='deriel-asociaciones-fotos.csv';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);status.textContent='CSV exportado. Úsalo como guía para actualizar Foto URL en Google Sheets.'});
+ document.getElementById('clearTirePhotoMap').addEventListener('click',()=>{if(confirm('¿Borrar las asociaciones guardadas en este navegador?')){localMap={};localStorage.removeItem('derielPhotoMap');status.textContent='Asociaciones locales eliminadas.'}});
+ // Called after the catalog fetch completes; wraps render hooks to keep options updated.
+ const oldRender=window.render;if(typeof oldRender==='function'){window.render=function(){oldRender();fillProducts()}}
+ fillProducts();setTimeout(fillProducts,1200);setTimeout(fillProducts,3500);
+})();
+</script>\n</body></html>

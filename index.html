@@ -76,7 +76,21 @@ input,select,button{font:inherit;border-radius:9px;padding:11px;border:1px solid
 
 
 }
-\n</style></head><body>
+\n
+/* Normalización visual de logotipos en las tarjetas del catálogo */
+.brand-logo-image{display:block;width:100%;max-width:174px;height:38px;max-height:38px;object-fit:contain;object-position:center center;background:transparent;padding:0;margin:0 auto;border:0}
+.brand{min-height:42px;display:flex;align-items:center;justify-content:flex-start;overflow:hidden}
+.brand-logo-michelin{max-width:174px;height:39px}
+.brand-logo-bridgestone{max-width:166px;height:35px}
+.brand-logo-bfgoodrich{max-width:164px;height:36px}
+.brand-logo-firestone{max-width:164px;height:36px}
+.brand-logo-uniroyal{max-width:154px;height:34px}
+.brand-logo-austone{max-width:148px;height:35px}
+.brand-logo-arivo{max-width:150px;height:34px}
+.brand-logo-roadtrack{max-width:158px;height:34px}
+.brand-fallback{min-height:38px;display:flex;align-items:center}
+@media(max-width:560px){.brand-logo-image{max-width:145px;height:32px;max-height:32px}}
+</style></head><body>
 <header class="site-header"><div class="nav-wrap"><a class="logo-link" href="#inicio"><img class="site-logo" src="logo-deriel.jpg" alt="Llantera Deriel"></a><nav class="main-nav" aria-label="Navegación principal"><a href="#inicio">⌂ Inicio</a><a href="#catalogo">◉ Llantas</a><a href="#servicios">✣ Servicios</a><a href="#videos">▣ Videos</a><a href="#ubicacion">⌖ Ubicación</a></nav><a class="nav-quote" href="https://wa.me/529511037358?text=Hola%2C%20Llantera%20Deriel%2C%20quiero%20cotizar." target="_blank" rel="noopener">☏ Cotizar por WhatsApp ↗</a></div></header>
 
 <section class="hero-showcase" id="inicio">
@@ -167,7 +181,7 @@ function brandMark(name){
   {keys:['AUSTONE'],src:'logos/austone.png',alt:'Austone'}
  ];
  const match=logos.find(item=>item.keys.some(k=>key.includes(k)));
- if(match) return `<img class="brand-logo brand-logo-image" src="${match.src}" alt="Logotipo ${match.alt}" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span class=brand-fallback>${match.alt}</span>')">`;
+ if(match) return `<img class="brand-logo brand-logo-image brand-logo-${match.alt.toLowerCase().replace(/[^a-z]+/g,'-')}" src="${match.src}" alt="Logotipo ${match.alt}" loading="lazy" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<span class=brand-fallback>${match.alt}</span>')">`;
  const styles={"CONTINENTAL":"font-weight:900;color:#161616","NEXEN":"font-style:italic;font-weight:900;color:#72409a","TORNEL":"font-style:italic;font-weight:900;color:#c21f32","ATLAS":"font-style:italic;font-weight:900;color:#cf2027","PEGASUS":"font-style:italic;font-weight:900;color:#244f8b","OVATION":"font-style:italic;font-weight:900;color:#263746"};
  const fallback=Object.keys(styles).find(k=>key.includes(k))||raw;
  return `<span class="brand-fallback" style="${styles[fallback]||'font-weight:900;color:#145b9d'}">${esc(fallback)}</span>`;

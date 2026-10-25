@@ -131,6 +131,12 @@ input,select,button{font:inherit;border-radius:9px;padding:11px;border:1px solid
  .card .brand img.brand-logo-image{max-width:145px !important;max-height:31px !important}
 }
 
+/* Galería de Instagram Behold */
+.instagram-gallery{margin-top:18px;background:#f7faff;border:1px solid var(--line);border-radius:14px;padding:18px;overflow:hidden}
+.instagram-gallery-head h3{margin:0 0 5px;color:#0b2e59;font-size:22px}
+.instagram-gallery-head p{margin:0 0 14px;color:#61758a;font-size:13px}
+.instagram-gallery behold-widget{display:block;min-height:180px}
+@media(max-width:620px){.instagram-gallery{padding:12px}.instagram-gallery-head h3{font-size:20px}}
 /* Redes sociales Deriel */
 .social-section{max-width:1200px;margin:22px auto;padding:0 14px}
 .social-panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
@@ -185,7 +191,11 @@ input,select,button{font:inherit;border-radius:9px;padding:11px;border:1px solid
    <a class="youtube" href="https://www.youtube.com/@DerielServicios" target="_blank" rel="noopener">▶ YouTube ↗</a>
   </div>
  </div>
- <p class="social-note">La galería de videos se actualiza desde YouTube. Las publicaciones de Instagram pueden consultarse desde el perfil oficial.</p>
+ <div class="instagram-gallery">
+  <div class="instagram-gallery-head"><h3>Deriel en Instagram</h3><p>Fotos, Reels y trabajos recientes del taller.</p></div>
+  <behold-widget feed-id="cNtmZkPPK1cXj6ZCMsZX"></behold-widget>
+ </div>
+ <p class="social-note">La galería de videos se actualiza desde YouTube y las publicaciones de Instagram se muestran desde el perfil conectado.</p>
 </section>
 <section class="location-section" id="ubicacion"><div class="location-card"><div><h2>Visítanos en Llantera Deriel</h2><p>Abre Google Maps para consultar la ubicación y las indicaciones disponibles.</p></div><a href="https://www.google.com/maps/search/?api=1&query=Llantera+Deriel+Oaxaca" target="_blank" rel="noopener">Abrir Google Maps ↗</a></div></section>
 
@@ -279,4 +289,14 @@ async function connect(){let url=$('csvUrl').value.trim();if(!url){$('setupMsg')
 $('connect').onclick=connect;$('forget').onclick=()=>{localStorage.removeItem('derielCsvUrl');$('csvUrl').value='';products=demo.slice();csvConnected=false;brands();render();$('setupMsg').textContent='Desconectado. Mostrando catálogo de ejemplo.'};$('q').oninput=render;$('brand').onchange=render;
 $('csvUrl').value='https://docs.google.com/spreadsheets/d/e/2PACX-1vSJWR2dzguh2fVxtwZdR-dp2kU-VPtqyifo_kqP1pxZeLhk4TRSns1PJJRdE01L2U36n2Rbj3BIZFUz/pub?gid=1585011700&single=true&output=csv';brands();render();
 connect();
-</script>\n</body></html>
+</script>\n<script>
+  (() => {
+    if (window.__bhldScript) return;
+    window.__bhldScript = true;
+    const s = document.createElement("script");
+    s.type = "module";
+    s.src = "https://w.behold.so/widget.js";
+    document.head.append(s);
+  })();
+</script>
+</body></html>

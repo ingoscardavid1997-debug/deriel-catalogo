@@ -90,6 +90,46 @@ input,select,button{font:inherit;border-radius:9px;padding:11px;border:1px solid
 .brand-logo-roadtrack{max-width:158px;height:34px}
 .brand-fallback{min-height:38px;display:flex;align-items:center}
 @media(max-width:560px){.brand-logo-image{max-width:145px;height:32px;max-height:32px}}
+
+/* Correccion definitiva: espacio de marca consistente en tarjetas */
+.card .brand{
+  width:100% !important;
+  height:46px !important;
+  min-height:46px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  overflow:hidden !important;
+  margin:0 0 3px !important;
+  padding:0 !important;
+}
+.card .brand img.brand-logo-image{
+  display:block !important;
+  width:auto !important;
+  height:auto !important;
+  max-width:180px !important;
+  max-height:38px !important;
+  object-fit:contain !important;
+  object-position:left center !important;
+  margin:0 !important;
+  padding:0 !important;
+  background:transparent !important;
+  border:0 !important;
+}
+/* Compensacion optica para marcas con logos de formato muy panoramico */
+.card .brand img.brand-logo-michelin{max-width:184px !important;max-height:40px !important; transform:scale(1.12); transform-origin:left center}
+.card .brand img.brand-logo-bridgestone{max-width:166px !important;max-height:35px !important;transform:scale(1.12);transform-origin:left center}
+.card .brand img.brand-logo-bfgoodrich{max-width:166px !important;max-height:36px !important;transform:scale(1.10);transform-origin:left center}
+.card .brand img.brand-logo-firestone{max-width:166px !important;max-height:36px !important;transform:scale(1.10);transform-origin:left center}
+.card .brand img.brand-logo-uniroyal{max-width:154px !important;max-height:34px !important;transform:scale(1.14);transform-origin:left center}
+.card .brand img.brand-logo-austone{max-width:150px !important;max-height:36px !important;transform:scale(1.15);transform-origin:left center}
+.card .brand img.brand-logo-arivo{max-width:154px !important;max-height:36px !important;transform:scale(1.15);transform-origin:left center}
+.card .brand img.brand-logo-roadtrack{max-width:160px !important;max-height:36px !important;transform:scale(1.15);transform-origin:left center}
+.card .brand .brand-fallback{font-size:19px !important;line-height:1 !important}
+@media(max-width:560px){
+ .card .brand{height:40px !important;min-height:40px !important}
+ .card .brand img.brand-logo-image{max-width:145px !important;max-height:31px !important}
+}
 </style></head><body>
 <header class="site-header"><div class="nav-wrap"><a class="logo-link" href="#inicio"><img class="site-logo" src="logo-deriel.jpg" alt="Llantera Deriel"></a><nav class="main-nav" aria-label="Navegación principal"><a href="#inicio">⌂ Inicio</a><a href="#catalogo">◉ Llantas</a><a href="#servicios">✣ Servicios</a><a href="#videos">▣ Videos</a><a href="#ubicacion">⌖ Ubicación</a></nav><a class="nav-quote" href="https://wa.me/529511037358?text=Hola%2C%20Llantera%20Deriel%2C%20quiero%20cotizar." target="_blank" rel="noopener">☏ Cotizar por WhatsApp ↗</a></div></header>
 

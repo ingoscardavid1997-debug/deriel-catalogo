@@ -1,5 +1,26 @@
 <!doctype html>
 <html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+
+<!-- Google Analytics 4: Llantera Deriel -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M8SQPPWR0B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M8SQPPWR0B', { send_page_view: true });
+
+  // Measure quote requests through WhatsApp, including links added dynamically.
+  document.addEventListener('click', function(event) {
+    const link = event.target.closest('a[href*="wa.me/"]');
+    if (!link) return;
+    gtag('event', 'whatsapp_click', {
+      link_url: link.href,
+      link_text: (link.innerText || link.textContent || '').trim().slice(0, 100),
+      page_location: window.location.href,
+      transport_type: 'beacon'
+    });
+  });
+</script>
 <title>Llantera Deriel | Catálogo</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');

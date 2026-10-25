@@ -1,0 +1,39 @@
+name: Actualizar YouTube Shorts
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-shorts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar lector de YouTube
+        run: pip install yt-dlp
+
+      - name: Actualizar lista de Shorts
+        run: python scripts/update_youtube_shorts.py
+
+      - name: Guardar cambios si hay videos nuevos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add youtube-videos.json
+          if git diff --cached --quiet; then
+            echo "La lista no tuvo cambios."
+          else
+            git commit -m "Actualizar galería de YouTube Shorts"
+            git push
+          fi

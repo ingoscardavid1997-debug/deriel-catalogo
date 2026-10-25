@@ -130,8 +130,20 @@ input,select,button{font:inherit;border-radius:9px;padding:11px;border:1px solid
  .card .brand{height:40px !important;min-height:40px !important}
  .card .brand img.brand-logo-image{max-width:145px !important;max-height:31px !important}
 }
+
+/* Redes sociales Deriel */
+.social-section{max-width:1200px;margin:22px auto;padding:0 14px}
+.social-panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.social-copy h2{font-family:Inter,Arial,sans-serif;color:#0b2e59;font-size:clamp(22px,3vw,30px);margin:0 0 6px}
+.social-copy p{margin:0;color:#61758a;line-height:1.5}
+.social-actions{display:flex;flex-wrap:wrap;gap:9px}
+.social-actions a{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 15px;border-radius:10px;text-decoration:none;font-weight:800;color:#fff;white-space:nowrap}
+.social-actions .instagram{background:#b72d78}.social-actions .facebook{background:#1769aa}.social-actions .youtube{background:#d93025}
+.social-note{font-size:12px;color:#718398;margin:10px 2px 0}
+@media(max-width:700px){.social-panel{align-items:flex-start;flex-direction:column;padding:17px}.social-actions{width:100%}.social-actions a{flex:1}}
+
 </style></head><body>
-<header class="site-header"><div class="nav-wrap"><a class="logo-link" href="#inicio"><img class="site-logo" src="logo-deriel.jpg" alt="Llantera Deriel"></a><nav class="main-nav" aria-label="Navegación principal"><a href="#inicio">⌂ Inicio</a><a href="#catalogo">◉ Llantas</a><a href="#servicios">✣ Servicios</a><a href="#videos">▣ Videos</a><a href="#ubicacion">⌖ Ubicación</a></nav><a class="nav-quote" href="https://wa.me/529511037358?text=Hola%2C%20Llantera%20Deriel%2C%20quiero%20cotizar." target="_blank" rel="noopener">☏ Cotizar por WhatsApp ↗</a></div></header>
+<header class="site-header"><div class="nav-wrap"><a class="logo-link" href="#inicio"><img class="site-logo" src="logo-deriel.jpg" alt="Llantera Deriel"></a><nav class="main-nav" aria-label="Navegación principal"><a href="#inicio">⌂ Inicio</a><a href="#catalogo">◉ Llantas</a><a href="#servicios">✣ Servicios</a><a href="#videos">▣ Videos</a><a href="#redes">◎ Redes</a><a href="#ubicacion">⌖ Ubicación</a></nav><a class="nav-quote" href="https://wa.me/529511037358?text=Hola%2C%20Llantera%20Deriel%2C%20quiero%20cotizar." target="_blank" rel="noopener">☏ Cotizar por WhatsApp ↗</a></div></header>
 
 <section class="hero-showcase" id="inicio">
  <div class="hero-grid">
@@ -163,6 +175,17 @@ input,select,button{font:inherit;border-radius:9px;padding:11px;border:1px solid
   <div class="video-grid" id="derielVideoGrid"></div>
   <p class="video-note" id="videoGalleryNote">Videos reales de los servicios de Llantera Deriel. Se muestran en orden aleatorio al cargar la página.</p>
  </div>
+</section>
+<section class="social-section" id="redes" aria-label="Redes sociales de Llantera Deriel">
+ <div class="social-panel">
+  <div class="social-copy"><h2>Sigue a Deriel</h2><p>Conoce nuestros trabajos, nuevos videos, promociones y consejos para cuidar tus llantas.</p></div>
+  <div class="social-actions">
+   <a class="instagram" href="https://www.instagram.com/deriel.mto/" target="_blank" rel="noopener">◎ Instagram ↗</a>
+   <a class="facebook" href="https://www.facebook.com/Deerieel" target="_blank" rel="noopener">f Facebook ↗</a>
+   <a class="youtube" href="https://www.youtube.com/@DerielServicios" target="_blank" rel="noopener">▶ YouTube ↗</a>
+  </div>
+ </div>
+ <p class="social-note">La galería de videos se actualiza desde YouTube. Las publicaciones de Instagram pueden consultarse desde el perfil oficial.</p>
 </section>
 <section class="location-section" id="ubicacion"><div class="location-card"><div><h2>Visítanos en Llantera Deriel</h2><p>Abre Google Maps para consultar la ubicación y las indicaciones disponibles.</p></div><a href="https://www.google.com/maps/search/?api=1&query=Llantera+Deriel+Oaxaca" target="_blank" rel="noopener">Abrir Google Maps ↗</a></div></section>
 
@@ -244,6 +267,12 @@ function renderDerielVideos(){
  document.getElementById('videoGalleryNote').textContent=`${items.length} video${items.length===1?'':'s'} en la galería. Los clips se muestran en orden aleatorio al cargar la página.`;
 }
 renderDerielVideos();
+// Carga la lista de Shorts generada periódicamente por GitHub Actions.
+// Si todavía no existe o falla la conexión, conserva los videos de respaldo.
+fetch('./youtube-videos.json?ts='+Date.now(),{cache:'no-store'})
+ .then(r=>r.ok?r.json():[])
+ .then(items=>{if(Array.isArray(items)&&items.length){VIDEO_ITEMS.splice(0,VIDEO_ITEMS.length,...items);renderDerielVideos();}})
+ .catch(()=>{});
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function brands(){let current=$('brand').value,bs=[...new Set(products.map(p=>p.brand).filter(Boolean))].sort();$('brand').innerHTML='<option value="">Todas las marcas</option>'+bs.map(b=>`<option>${esc(b)}</option>`).join('');if(bs.includes(current))$('brand').value=current;}
 async function connect(){let url=$('csvUrl').value.trim();if(!url){$('setupMsg').textContent='Pega primero la URL CSV publicada.';return}try{$('setupMsg').textContent='Conectando…';let res=await fetch(url,{cache:'no-store'});if(!res.ok)throw Error('No se pudo leer la hoja. Verifica que esté publicada como CSV.');let raw=parseCSV(await res.text()).map(normalize).filter(p=>p&&p.size&&p.brand&&p.cash>0);if(!raw.length)throw Error('No se encontraron filas válidas. Revisa los encabezados de la hoja Catalogo.');products=raw;csvConnected=true;localStorage.setItem('derielCsvUrl',url);$('setupMsg').textContent=`Conectado. ${raw.length} productos cargados desde Google Sheets. Para ver cambios nuevos, pulsa Conectar catálogo otra vez o recarga la página.`;brands();render()}catch(e){$('setupMsg').textContent='Error: '+e.message+' Si el enlace de Google no funciona directamente, verifica que hayas publicado la pestaña como CSV.'}}

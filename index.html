@@ -20,6 +20,34 @@
       transport_type: 'beacon'
     });
   });
+
+  // Measure catalog searches after the visitor pauses typing.
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('q');
+    if (!searchInput) return;
+    let searchTimer;
+    let lastTrackedTerm = '';
+    searchInput.addEventListener('input', function() {
+      clearTimeout(searchTimer);
+      const term = searchInput.value.trim();
+      if (!term) return;
+      searchTimer = setTimeout(function() {
+        if (term.toLowerCase() === lastTrackedTerm.toLowerCase()) return;
+        lastTrackedTerm = term;
+        const countText = document.getElementById('count')?.textContent || '';
+        const resultsCount = Number((countText.match(/\\d+/) || ['0'])[0]);
+        gtag('event', 'search', {
+          search_term: term,
+          results_count: resultsCount
+        });
+        if (resultsCount === 0) {
+          gtag('event', 'search_no_results', {
+            search_term: term
+          });
+        }
+      }, 800);
+    });
+  });
 </script>
 <title>Llantera Deriel | Catálogo</title>
 <style>

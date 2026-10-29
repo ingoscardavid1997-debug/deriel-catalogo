@@ -356,13 +356,17 @@ $('q').oninput=render;$('brand').onchange=render;brands();render();
 
 // Consulta inventario público de Deriel Control. No expone costos, ventas ni clientes.
 // Tras desplegar Código.gs como Aplicación web, pega aquí su URL terminada en /exec.
-function loadDerielInventory(){
+function loadDerielInventory(attempt=1){
   if(!INVENTORY_API_URL || INVENTORY_API_URL.includes("PEGA_AQUI")) return;
   const callbackName="derielInventoryCallback";
+  const status=$("inventoryStatus");
+  if(status) status.textContent=attempt===1
+    ? "Cargando inventario actualizado de Deriel Control…"
+    : "Reintentando conexión con Deriel Control…";
   window[callbackName]=function(data){
     try{
       if(!data || data.ok!==true || !Array.isArray(data.products)) throw new Error("Respuesta inválida");
-      products=data.products.map(p=>{
+      products=data.products.filter(p=>p && p.active!==false).map(p=>{
         const cash=Number(p.salePrice)||0;
         return {
           productId:String(p.productId||""), brand:String(p.brand||"").trim(),
@@ -371,16 +375,27 @@ function loadDerielInventory(){
           p3:cash*1.069252, p6:cash*1.098368, p9:cash*1.133168, p12:cash*1.167968,
           image:""
         };
-      }).filter((p,i)=>data.products[i]?.active!==false && p.brand && p.size && p.cash>0);
+      }).filter(p=>p.brand && p.size && p.cash>0);
       brands(); render();
-      const status=$("inventoryStatus");
       if(status) status.textContent="Inventario de Deriel Control sincronizado: "+products.length+" productos.";
-    }catch(err){console.error("No se pudo procesar el inventario de Deriel Control.",err);const status=$("inventoryStatus");if(status)status.textContent="No se pudo procesar el inventario. Intenta recargar la página."; }
-    finally{delete window[callbackName];}
+    }catch(err){
+      console.error("No se pudo procesar el inventario de Deriel Control.",err);
+      if(status) status.textContent="La respuesta del inventario no tuvo el formato esperado. Recarga la página.";
+    }finally{delete window[callbackName];}
   };
   const script=document.createElement("script");
-  script.src=INVENTORY_API_URL+(INVENTORY_API_URL.includes("?")?"&":"?")+"catalog=1&callback="+callbackName+"&ts="+Date.now();
-  script.onerror=()=>{console.error("No se pudo conectar con el inventario de Deriel Control.");const status=$("inventoryStatus");if(status)status.textContent="No se pudo cargar el inventario. Intenta recargar la página.";delete window[callbackName];};
+  script.async=true;
+  script.src=INVENTORY_API_URL+(INVENTORY_API_URL.includes("?")?"&":"?")+"catalog=1&callback="+callbackName+"&ts="+Date.now()+"_"+attempt;
+  script.onerror=()=>{
+    console.error("No se pudo conectar con el inventario de Deriel Control. Intento:",attempt);
+    delete window[callbackName];
+    script.remove();
+    if(attempt<2){
+      setTimeout(()=>loadDerielInventory(attempt+1),1200);
+    }else if(status){
+      status.textContent="No se pudo cargar el inventario tras dos intentos. Verifica tu conexión y recarga la página.";
+    }
+  };
   document.head.appendChild(script);
 }
 loadDerielInventory();

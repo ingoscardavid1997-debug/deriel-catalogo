@@ -385,7 +385,7 @@ function loadDerielInventory(attempt=1){
   };
   const script=document.createElement("script");
   script.async=true;
-  script.src=INVENTORY_API_URL+(INVENTORY_API_URL.includes("?")?"&":"?")+"catalog=1&callback="+callbackName+"&ts="+Date.now()+"_"+attempt;
+  script.src=INVENTORY_API_URL+(INVENTORY_API_URL.includes("?")?"&":"?")+"catalog=1&callback="+callbackName+"&ts="+Date.now();
   script.onerror=()=>{
     console.error("No se pudo conectar con el inventario de Deriel Control. Intento:",attempt);
     delete window[callbackName];

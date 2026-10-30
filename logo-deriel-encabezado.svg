@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 300">
+<rect width="1100" height="300" fill="#fff"/>
+<g transform="translate(28 24)">
+<path d="M18 25H105C167 25 202 61 202 124S167 223 105 223H18" fill="none" stroke="#092b55" stroke-width="24" stroke-linecap="square"/>
+<path d="M55 55V147" fill="none" stroke="#656b73" stroke-width="11"/>
+<path d="M18 170C48 141 71 135 96 147C125 161 142 187 171 184C183 183 194 177 202 169" fill="none" stroke="#656b73" stroke-width="9"/>
+<path d="M18 190C49 165 73 158 99 170C126 183 145 205 173 201C184 199 194 193 202 185" fill="none" stroke="#0874c9" stroke-width="9"/>
+<path d="M18 211C49 186 73 179 99 191C126 204 145 226 173 222C184 220 194 214 202 206" fill="none" stroke="#0b4d98" stroke-width="9"/>
+</g>
+<text x="255" y="203" fill="#092b55" font-family="Arial, Helvetica, sans-serif" font-size="190" font-weight="500" letter-spacing="3">DERIEL</text>
+<rect x="255" y="238" width="88" height="4" fill="#0874c9"/>
+<text x="365" y="253" fill="#626a73" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="600" letter-spacing="7">SERVICIOS DE MANTENIMIENTO INTEGRAL</text>
+<rect x="1000" y="238" width="65" height="4" fill="#0874c9"/>
+</svg>

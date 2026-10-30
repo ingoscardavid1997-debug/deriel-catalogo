@@ -227,7 +227,14 @@ input,select,button{font:inherit;border-radius:9px;padding:11px;border:1px solid
 .social-note{font-size:12px;color:#718398;margin:10px 2px 0}
 @media(max-width:700px){.social-panel{align-items:flex-start;flex-direction:column;padding:17px}.social-actions{width:100%}.social-actions a{flex:1}}
 
-</style></head><body>
+</style>
+<meta name="theme-color" content="#082b55">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Deriel">
+</head><body>
 <header class="site-header"><div class="nav-wrap"><a class="logo-link" href="#inicio"><img class="site-logo" src="logo-deriel-catalogo.png" alt="Llantera Deriel"></a><nav class="main-nav" aria-label="Navegación principal"><a href="#inicio">⌂ Inicio</a><a href="#catalogo">◉ Llantas</a><a href="#servicios">✣ Servicios</a><a href="#videos">▣ Videos</a><a href="#redes">◎ Redes</a><a href="#ubicacion">⌖ Ubicación</a></nav><a class="nav-quote" href="https://wa.me/529511037358?text=Hola%2C%20Llantera%20Deriel%2C%20quiero%20cotizar." target="_blank" rel="noopener">☏ Cotizar por WhatsApp ↗</a></div></header>
 
 <section class="hero-showcase" id="inicio">
@@ -409,5 +416,13 @@ loadDerielInventory();
     s.src = "https://w.behold.so/widget.js";
     document.head.append(s);
   })();
+</script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("./service-worker.js").catch(error => console.warn("No se pudo registrar el modo instalable:", error));
+  });
+}
 </script>
 </body></html>

@@ -1,15 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 <defs>
- <linearGradient id="navy" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071d43"/><stop offset=".58" stop-color="#0754ad"/><stop offset="1" stop-color="#061d4a"/></linearGradient>
- <linearGradient id="blue" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#0875ed"/><stop offset="1" stop-color="#03459f"/></linearGradient>
- <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7d8793"/><stop offset="1" stop-color="#424c59"/></linearGradient>
- <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="9"/></filter>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071d3b"/><stop offset="1" stop-color="#1464a5"/></linearGradient>
+ <radialGradient id="rubber"><stop offset="0" stop-color="#536477"/><stop offset=".56" stop-color="#26384b"/><stop offset=".82" stop-color="#111c2a"/><stop offset="1" stop-color="#050b13"/></radialGradient>
+ <radialGradient id="rim"><stop offset="0" stop-color="#f7fbff"/><stop offset=".72" stop-color="#b9c8d8"/><stop offset="1" stop-color="#71869c"/></radialGradient>
 </defs>
-<rect width="512" height="512" rx="112" fill="#fff"/>
-<rect x="22" y="22" width="468" height="468" rx="100" fill="#e8edf4" opacity=".45"/>
-<path d="M80 112h205c91 0 147 57 147 144S376 400 285 400H80" fill="none" stroke="url(#navy)" stroke-width="55" stroke-linecap="square" stroke-linejoin="round"/>
-<path d="M160 160v116" fill="none" stroke="url(#silver)" stroke-width="25"/>
-<path d="M80 325c39-37 75-55 111-49 45 7 64 55 111 61 34 5 67-9 91-31" fill="none" stroke="url(#silver)" stroke-width="23" stroke-linecap="round"/>
-<path d="M80 365c39-37 75-55 111-49 45 7 64 55 111 61 34 5 67-9 91-31" fill="none" stroke="url(#blue)" stroke-width="24" stroke-linecap="round"/>
-<path d="M80 405c39-37 75-55 111-49 45 7 64 55 111 61 34 5 67-9 91-31" fill="none" stroke="#06458f" stroke-width="22" stroke-linecap="round"/>
+<rect width="512" height="512" rx="112" fill="url(#bg)"/>
+<circle cx="256" cy="238" r="177" fill="#000" opacity=".25"/>
+<circle cx="256" cy="228" r="169" fill="url(#rubber)" stroke="#71849a" stroke-width="9"/>
+<circle cx="256" cy="228" r="147" fill="none" stroke="#a7b6c7" stroke-width="5" stroke-dasharray="7 13" opacity=".85"/>
+<circle cx="256" cy="228" r="119" fill="#172638" stroke="#53677d" stroke-width="9"/>
+<circle cx="256" cy="228" r="91" fill="url(#rim)" stroke="#e4edf5" stroke-width="8"/>
+<circle cx="256" cy="228" r="57" fill="#eaf1f8" stroke="#71869c" stroke-width="8"/>
+<circle cx="256" cy="228" r="24" fill="#0b2e59"/>
+<g fill="#60778f"><circle cx="256" cy="180" r="9"/><circle cx="302" cy="213" r="9"/><circle cx="284" cy="266" r="9"/><circle cx="228" cy="266" r="9"/><circle cx="210" cy="213" r="9"/></g>
+<path d="M112 420h288" stroke="#5bb4ef" stroke-width="9" stroke-linecap="round"/>
+<text x="256" y="468" text-anchor="middle" font-family="Arial,sans-serif" font-size="30" font-weight="700" letter-spacing="5" fill="#fff">DERIEL</text>
 </svg>

@@ -1,4 +1,4 @@
-const CACHE_NAME = "deriel-catalogo-v1";
+const CACHE_NAME = "deriel-catalogo-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
